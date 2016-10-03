@@ -14,7 +14,7 @@ me and my bash scripts to extract these values with ease.
 By just writing
 
 ``bash
-url
+url --help
 ``
 
 The usage information is printed.

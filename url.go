@@ -67,10 +67,12 @@ var subCommands = map[string]func([]string)(string, error){
     }
   },
   "fragment": urlSubCommand(func(u *url.URL)(string, error) { return u.Fragment, nil }),
+  "help": func(args []string)(string, error) { return usage, nil },
+  "--help": func(args []string)(string, error) { return usage, nil },
 }
 
 func Main(args []string) (string, error) {
-  if len(args) < 2 {
+  if len(args) < 1 {
     return "", errors.New(appendUsage("Too few arguments given."))
   }
 
