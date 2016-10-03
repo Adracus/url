@@ -1,5 +1,6 @@
 URL
 ===
+[![Build Status](https://travis-ci.org/Adracus/url.svg?branch=master)](https://travis-ci.org/Adracus/url)
 
 Ever wanted to easily extract the host, port or something
 else in a bash script from a URL? Then tried to google it
