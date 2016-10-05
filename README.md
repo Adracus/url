@@ -29,6 +29,7 @@ At the moment of writing, the tool supports the following subcommands:
 * `username`: Extracts _only_ the username of the given url.
 * `password`: Extracts _only_ the password of the given url.
 * `host`: Extracts the host part of the given url.
+* `hostname`: Extracts _only_ the hostname of the given url.
 * `port`: Extracts the port of the given url if it was specified.
 * `path`: Extracts the path of the given url.
 * `query`: Extracts the query of the given url.

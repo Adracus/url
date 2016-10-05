@@ -16,7 +16,8 @@ const usage =
   "\t\tuser: Returns the user part of the given url.\n\n" +
   "\t\tusername: Returns the username of the user part of the given url.\n\n" +
   "\t\tpassword: Returns the password of the user part of the given url.\n\n" +
-  "\t\thost: Returns the host of the given url.\n\n" +
+  "\t\thost: Returns the host part of the given url.\n\n" +
+  "\t\thostname: Returns the hostname (without port) of the given url.\n\n" +
   "\t\tport: Returns the port of the given url.\n\n" +
   "\t\tpath: Returns the path of the given url.\n\n" +
   "\t\tquery: Returns the query of the given url.\n\n" +
@@ -45,14 +46,21 @@ var subCommands = map[string]func([]string)(string, error){
     return password, nil
   }),
   "host": urlSubCommand(func(u *url.URL)(string, error) { return u.Host, nil }),
+  "hostname": urlSubCommand(func(u *url.URL)(string, error) {
+    host := u.Host
+    idx := strings.Index(host, ":")
+    if idx != -1 {
+      return host[:idx], nil
+    }
+    return host, nil
+  }),
   "port": urlSubCommand(func(u *url.URL)(string, error) {
     host := u.Host
     idx := strings.Index(host, ":")
     if idx != -1 && len(host) - 1 > idx {
       return host[(idx + 1):], nil
-    } else {
-      return "", nil
     }
+    return "", nil
   }),
   "path": urlSubCommand(func(u *url.URL)(string, error) { return u.Path, nil }),
   "query": urlSubCommand(func(u *url.URL)(string, error) { return u.RawQuery, nil }),
