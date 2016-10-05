@@ -1,5 +1,12 @@
 language: go
-
 go:
-  - 1.6
-
+- 1.6
+deploy:
+  skip_cleanup: true
+  tags: true
+  provider: releases
+  api_key:
+    secure: hDvUbr38xAdUlklXxdPs5jL4bbGEe1O4uoekK0pgLK3FKSr/u2QCpP32nLKiHBhkfMCkteTguoeADFLsIxhRGji+Vex0n5ktMDOmupVrfkrSbAXYEg4V9wptIcjOWqe+MzS8Nhx1zCPVrS3yJmD6JDhMNC7vZSGpSMX9BtN/XZuNwHWXIaZGB1ljvs7A+Icap2diX6WoxnzvnxdJ/PCvVkJ7WOmMAaYZh4/A1rF/6ao2PUB7+x04XZAjzbwo5/erw5+KjJnVlTauN4jIH2ASkoHnNUNIk4HaqjtWFMatsnmxc/3ZeUGNMouILo/ind6BWv34yVmeou6L0zo3ZqEUL4cJVZAnY8x8tpqRwllCU0PWaCmRzHiLgzaRD9VmknDPGLvFOVBfdAe6O8vy0i10pDwEXkhR1pcBuxy2Zl8NpiFN1o7Nwjrnt0ZjbHtybf2m5xt7q+b7AacQsh+zQz3dtvaF6pu0Y8kQHFfRdbLVe3ze7y0yDd/zVlb5xHprAOcLgZkMD8l/P1dPekaTokdM0OSkKuVUvek34OZgyK3rX+u3nl2uFoGlzlFtDbuwXMBhZoK7PNRhcH+AmsTuSECnzXy5UYM80KokNDP8ziFtiO3wfo6vtwv/thhW6x5rw09nnvLQxnGftGOfTzowzIWwn7sQ65WYI0PSYNwl/Z0Phdw=
+  file: url
+  on:
+    repo: Adracus/url

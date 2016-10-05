@@ -1,4 +1,4 @@
-URL
+url
 ===
 [![Build Status](https://travis-ci.org/Adracus/url.svg?branch=master)](https://travis-ci.org/Adracus/url)
 
@@ -14,7 +14,7 @@ me and my bash scripts to extract these values with ease.
 
 By just writing
 
-``bash
+``
 url --help
 ``
 
